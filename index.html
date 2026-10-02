@@ -1,11 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafeteria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Cafeteria | Gestão Simplificada</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <header class="navbar">
+    <div class="brand">
+      <svg class="logo-svg" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#6F4E37"/>
+        <path d="M50 18C33.4 18 20 32.3 20 50C20 67.7 33.4 82 50 82C66.6 82 80 67.7 80 50C80 32.3 66.6 18 50 18ZM50 74C37.8 74 28 63.3 28 50C28 36.7 37.8 26 50 26C62.2 26 72 36.7 72 50C72 63.3 62.2 74 50 74Z" fill="#FFFFFF"/>
+        <path d="M50 26C42 36 58 64 50 74" stroke="#6F4E37" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <h1>Cafeteria</h1>
+        <p class="subtitle">Painel do Operador</p>
+      </div>
+    </div>
     
+    <button class="btn-pdf">Gerar Boletim PDF</button>
+  </header>
+
+  <main class="dashboard">
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Controle de Estoque</h2>
+      </div>
+
+      <form class="crud-form">
+        <div class="form-group small">
+          <label for="item-id">ID</label>
+          <input type="number" id="item-id" placeholder="Ex: 101" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="item-nome">Nome do Item</label>
+          <input type="text" id="item-nome" placeholder="Ex: Café Torrado 1kg" required />
+        </div>
+
+        <div class="form-group medium">
+          <label for="item-valor">Valor (R$)</label>
+          <input type="number" id="item-valor" step="0.01" placeholder="Ex: 45.00" required />
+        </div>
+
+        <div class="form-group medium">
+          <label for="item-data">Data de Entrada</label>
+          <input type="date" id="item-data" required />
+        </div>
+
+        <button type="button" class="btn-primary">Salvar Item</button>
+      </form>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome do Item</th>
+              <th>Valor (R$)</th>
+              <th>Data</th>
+              <th class="actions">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#101</td>
+              <td>Grãos de Café Arábica (1kg)</td>
+              <td>R$ 45,00</td>
+              <td>02/10/2026</td>
+              <td class="actions">
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#102</td>
+              <td>Leite Integral (1L)</td>
+              <td>R$ 5,50</td>
+              <td>01/10/2026</td>
+              <td class="actions">
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Gestão de Funcionários</h2>
+      </div>
+
+      <form class="crud-form">
+        <div class="form-group small">
+          <label for="func-id">ID</label>
+          <input type="number" id="func-id" placeholder="Ex: 01" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="func-nome">Nome do Funcionário</label>
+          <input type="text" id="func-nome" placeholder="Ex: Ana Silva" required />
+        </div>
+
+        <div class="form-group medium">
+          <label for="func-cargo">Cargo</label>
+          <input type="text" id="func-cargo" placeholder="Ex: Barista" required />
+        </div>
+
+        <div class="form-group medium">
+          <label for="func-data">Data de Admissão</label>
+          <input type="date" id="func-data" required />
+        </div>
+
+        <button type="button" class="btn-primary">Salvar Funcionário</button>
+      </form>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Data Admissão</th>
+              <th class="actions">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#01</td>
+              <td>Ana Silva</td>
+              <td>Barista Principal</td>
+              <td>15/03/2025</td>
+              <td class="actions">
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#02</td>
+              <td>Carlos Eduardo</td>
+              <td>Atendente</td>
+              <td>10/08/2025</td>
+              <td class="actions">
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
 </body>
 </html>
